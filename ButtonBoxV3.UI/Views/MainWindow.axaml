@@ -1,0 +1,90 @@
+<Window
+    x:Class="ButtonBoxV3.UI.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:ButtonBoxV3.UI.ViewModels"
+    Title="ButtonBox"
+    Width="800"
+    Height="450"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    mc:Ignorable="d">
+
+    <Design.DataContext>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
+    </Design.DataContext>
+
+    <Grid ShowGridLines="True">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="90*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Margin="10,10,0,10" Orientation="Horizontal">
+
+            <Button
+                Width="40"
+                Height="32"
+                Margin="5"
+                VerticalAlignment="Center"
+                FontSize="20">
+
+                <PathIcon
+                    Width="15"
+                    Height="15"
+                    Data="{StaticResource 3HorizontalLines}" />
+
+            </Button>
+
+            <Button
+                Width="40"
+                Height="32"
+                Margin="5"
+                VerticalAlignment="Center"
+                Command="{Binding CreateNewProfile}">
+                <PathIcon
+                    Width="15"
+                    Height="15"
+                    Data="{StaticResource PlusSign}" />
+            </Button>
+
+            <ComboBox
+                Height="30"
+                Margin="5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                ItemsSource="{Binding ProfileManager.ProfileList}"
+                SelectedIndex="0" />
+
+
+
+        </StackPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+
+</Window>
