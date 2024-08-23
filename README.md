@@ -1,0 +1,1 @@
+Button Box App for managing button box keybinds for custom built USB button box. (Build in progress - Example: ![image](https://github.com/user-attachments/assets/ec859821-81b6-493a-9695-20e3815a1fc0))
